@@ -25,10 +25,10 @@ public class PhotoQuiz {
 
 		// 1. find an image on the internet, and put its URL in a String
 		// variable (from your browser, right click on the image, and select
-		// “Copy Image Address”)
-
+		// â€œCopy Image Addressâ€�)
+String pic ="https://cdn.vox-cdn.com/thumbor/-bKrYahnwqww9sH9v2h34v9ViA0=/0x114:585x559/1200x800/filters:focal(248x297:340x389)/cdn.vox-cdn.com/uploads/chorus_image/image/57272301/Screen_Shot_2017_10_23_at_10.16.32_AM.0.png";
 		// 2. create a variable of type "Component" that will hold your image
-
+Component a = createImage(pic);
 		// 3. use the "createImage()" method below to initialize your Component
 
 		// 4. add the image to the quiz window
