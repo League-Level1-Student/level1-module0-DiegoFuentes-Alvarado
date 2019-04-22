@@ -21,7 +21,7 @@ import javax.swing.JPanel;
 public class DrumKit implements MouseListener {
 
 	JLabel drumLabelWithImage;
-
+	JLabel drumLabelWithImage2;
 	public void run() throws MalformedURLException {
 
 		// 1. Make a JFrame variable and initialize it using "new JFrame()"
@@ -43,11 +43,14 @@ jj.add(pan);
 
 		// 8. Put the name of your image file in a String variable.
 String drum = "drum.jpeg";
+String drum2 = "drum2.jpeg";
 		// 9. Edit the next line to use your String variable
 		// drumLabelWithImage = createLabelImage(drumImageString);
 drumLabelWithImage = createLabelImage(drum);
+drumLabelWithImage2 = createLabelImage(drum2);
 		// 10. Add the image to the panel
 pan.add(drumLabelWithImage);
+pan.add(drumLabelWithImage2);
 		// 11. Set the layout of the panel to "new GridLayout()"
 pan.setLayout(new GridLayout());
 		// 12. call the pack() method on the frame. Run your program. Do you see
@@ -55,6 +58,7 @@ pan.setLayout(new GridLayout());
 jj.pack();
 		// 13. add this mouse listener to drumLabelWithImage
 drumLabelWithImage.addMouseListener(this);
+drumLabelWithImage2.addMouseListener(this);
 		// 18. Add more images to make a drumkit. Remember to add this mouse
 		// listener to each one.
 
@@ -74,7 +78,10 @@ drumLabelWithImage.addMouseListener(this);
 
 		// 16. If they clicked on the drumImage...
 if(drumClicked == drumLabelWithImage){
-	playSound(264859__veiler__snare-rock-2.wav);
+	playSound("264859__veiler__snare-rock-2.wav");
+}
+if(drumClicked == drumLabelWithImage2){
+	playSound("264859__veiler__snare-rock-2.wav");
 }
 		// 17. ...use the playSound method to play a drum sound. Test to see if
 		// it works
