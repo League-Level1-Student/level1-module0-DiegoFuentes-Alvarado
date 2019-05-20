@@ -1,3 +1,4 @@
+
 package sound_effects_machine;
 
 import java.applet.AudioClip;
@@ -17,14 +18,22 @@ import my_first_swing_gui.MyFirstSwingGUI;
 public class soundMachine implements ActionListener {
 	
 	JFrame frame = new JFrame();
+	JButton button2 = new JButton();
+	JButton button = new JButton();
 	soundMachine(){
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
-				JPanel panel = new JPanel();
-		JButton button = new JButton();
+		JPanel panel = new JPanel();
 		panel.add(button);
 		button.addActionListener(this);
-		button.setIcon(loadImage());
+		button.setIcon(loadImage("cat.jpeg"));
 		frame.add(panel);
+		
+	
+		panel.add(button2);
+		button2.addActionListener(this);
+		button2.setIcon(loadImage("iAmSpeed.jpg"));
+
 		frame.pack();
 	}
 	
@@ -32,9 +41,9 @@ public class soundMachine implements ActionListener {
 		AudioClip sound = JApplet.newAudioClip(getClass().getResource(fileName));
 		sound.play();
 	}
-	public ImageIcon loadImage() {
+	public ImageIcon loadImage(String file) {
 		try {
-			return new ImageIcon(ImageIO.read(new soundMachine().getClass().getResourceAsStream("cat.jpeg")));
+			return new ImageIcon(ImageIO.read(this.getClass().getResourceAsStream(file)));
 		} catch (IOException e) {
 
 			return null;
@@ -42,8 +51,13 @@ public class soundMachine implements ActionListener {
 	}
 	
 	@Override
-	public void actionPerformed(ActionEvent arg0) {
+	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
+		if(e.getSource()== button){
 		playSound("meow.wav");
+		}
+		if(e.getSource()== button2){
+			playSound("horn.wav");
+			}
 	}
 }
